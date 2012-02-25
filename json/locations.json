@@ -1,0 +1,77 @@
+{
+    "status": "success",
+    "list": [
+        {
+            "id": "943",
+            "name": "Eskilstuna",
+            "county": "S&ouml;dermanland",
+            "dist": "0.0"
+        },
+        {
+            "id": "971",
+            "name": "Stora Sundby",
+            "county": "S&ouml;dermanland",
+            "dist": "0.5"
+        },
+        {
+            "id": "951",
+            "name": "Husby-Rekarne",
+            "county": "S&ouml;dermanland",
+            "dist": "2.4"
+        },
+        {
+            "id": "964",
+            "name": "Skogstorp",
+            "county": "S&ouml;dermanland",
+            "dist": "4.2"
+        },
+        {
+            "id": "973",
+            "name": "Torsh&auml;lla",
+            "county": "S&ouml;dermanland",
+            "dist": "5.9"
+        },
+        {
+            "id": "950",
+            "name": "H&aring;llsta",
+            "county": "S&ouml;dermanland",
+            "dist": "7.9"
+        },
+        {
+            "id": "938",
+            "name": "&Auml;rla",
+            "county": "S&ouml;dermanland",
+            "dist": "13.2"
+        },
+        {
+            "id": "1436",
+            "name": "Kvicksund",
+            "county": "V&auml;stmanland",
+            "dist": "13.9"
+        },
+        {
+            "id": "957",
+            "name": "N&auml;shulta",
+            "county": "S&ouml;dermanland",
+            "dist": "17.1"
+        },
+        {
+            "id": "1455",
+            "name": "V&auml;ster&aring;s",
+            "county": "V&auml;stmanland",
+            "dist": "20.7"
+        },
+        {
+            "id": "949",
+            "name": "H&auml;lleforsn&auml;s",
+            "county": "S&ouml;dermanland",
+            "dist": "22.2"
+        },
+        {
+            "id": "1435",
+            "name": "Kungs&ouml;r",
+            "county": "V&auml;stmanland",
+            "dist": "24.2"
+        }
+    ]
+}

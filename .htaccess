@@ -1,0 +1,12 @@
+ServerSignature Off
+FileEtag MTime
+
+# Options +Indexes +FollowSymLinks
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^api/(.*)$ /api.php/$1 [L,NC]
+# RewriteRule ^$ /index.html [L]
+# RewriteRule ^api/(.*)$ /api.php/$1 [L,NC]
+RewriteRule ^eachHelper/(\d{1,5})$ /eachHelper.php?advertid=$1 [L,NC]

@@ -1,0 +1,44 @@
+[
+    {
+        "PrimaryTag": "Tr&auml;df&auml;llning",
+        "ID": 20,
+        "Town": "Eskilstuna",
+        "Helper": "Victoria",
+        "HelperID": 1,
+        "Rating": "/images/happy.png",
+        "Comments": 3,
+        "Tags": [
+            {
+                "Name": "Barnvakt",
+                "ID": 20
+            },
+            {
+                "Name": "Djurvakt",
+                "ID": 21
+            },
+            {
+                "Name": "Hundvakt",
+                "ID": 22
+            }
+        ]
+    },
+    {
+        "PrimaryTag": "Tr&auml;dputsning",
+        "ID": 21,
+        "Town": "Eskilstuna",
+        "Helper": "Stefan",
+		"HelperID": 2,
+        "Rating": "/images/angry.png",
+        "Comments": 5,
+        "Tags": [
+            {
+                "Name": "Tr&auml;dkramare",
+                "ID": 20
+            },
+            {
+                "Name": "L&ouml;vdykare",
+                "ID": 21
+            }
+        ]
+    }
+]

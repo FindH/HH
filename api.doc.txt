@@ -1,0 +1,23 @@
+
+/api.php/ping
+	Ping API -- keep session alive (dies on 20 minutes inactivity)
+
+/api.php/getcities/59.3666667/16.5
+	Fetch cities round point .. 
+	
+/api.php/getcities
+	Fetch cities without parameters -- returns all 1700+ cities
+
+/api.php/getuserrate/1
+	Rate for userId 1
+
+/api.php/getuserratelist/1
+	Rate list for userId 1 -- with indicators
+
+	
+/api.php/gettags
+	Get all tags
+
+/api.php/getadvertslatest
+	Get latest 50 adverts with tags 'n such
+	
