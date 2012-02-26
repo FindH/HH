@@ -21,7 +21,7 @@
                     <input type="text" id="searchBox" name="searchBox" placeholder="Hjälp mig med.." style="width:100%" />
                       <p>i
 				<select id="selectLocation" name="selectLocation"></select>
-				<input type="submit" id="findHelpers" value="Hitta hjälpare" />
+				<!--<input type="submit" id="findHelpers" value="Hitta hjälpare" />-->
 		      </p>
 
                 </form>
