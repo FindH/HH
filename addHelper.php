@@ -66,9 +66,10 @@
 		    </div> <!-- End of giveEmailBorderBottom -->
 		</div><!-- end of mailSpace-->
 
-                        <p><span style="text-decoration: line-through; color: #aaaaaa;">Att lägga till sig på hittahjälpen.se kostar 20:-. Din profil ligger uppe i två månader. Du betalar genom att skicka ett sms.
-			Instruktionerna kommer till din mail!</span>
-                        Testa att lägga in dig på hittahjälpen.se alldeles gratis under hela November 2011! Din profil ligger uppe året ut!</p>
+                        <p>
+                        Lägg in dig på hittahjälpen.se gratis under hela Feb-Mars 2012! Din profil ligger uppe året ut!
+                        <span style="text-decoration: line-through; color: #aaaaaa;">Lägga till sig på hittahjälpen.se kostar 20:-. Din profil ligger uppe i två månader. Du betalar genom att skicka ett sms.
+			Instruktionerna kommer till din mail!</span></p>
 			<input type="submit" value="Lägg till mig!" id="addMe" />
 			<!-- Lägg till mig och skicka betalningsinstruktionerna! ALLT DET HÄR SKA VARA MED PÅ KNAPPEN NÄR VI TAR BETALT! -->
 
