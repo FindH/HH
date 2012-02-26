@@ -105,16 +105,45 @@ if(mysql_num_rows(mysql_query("
 
 // Kolla vilka taggar som redan finns!
 //För varje tagg som inte redan finns - lägg till tagg och hämta ut vilket id den taggen fick!
-
+$radaUppTaggarArray = mysql_query("
+	  SELECT
+	    tag_value
+	    FROM
+	      tags
+	    ");
 
 //Ladda hem en array med alla taggar som finns sen! */
-  foreach($tags as $t) {
-    //echo $t;
-  }
+  /*foreach($tags as $t) {
+    echo $t;
+  }*/
   //Om jag får träff på en tagg som inte redan finns så måste jag lägga in den taggen!
   /* och  det kan jag ju faktiskt börja med (här uppe!)
     och hämta ut id!
   */
+
+  //vi har en array, och det är $tags! (längre upp i koden)
+  //vi stoppar in den i $arr = $tags;
+  $arr = $tags;
+
+  while ($befTaggar = mysql_fetch_array($radaUppTaggarArray)){
+      $existingTag = $befTaggar['tag_value'];
+      if (in_array($existingTag, $tags)) {
+        
+        //print_r($arr);  <-- dessa taggar skickas med från föregående sida!
+        
+        //
+        $arr = array_diff($arr, array($existingTag));
+        echo "<br />";
+        print_r($arr);
+        echo "<br /><br />".$existingTag." finns redan med som godkänd tagg! Guuut!<br />";
+      }   
+  }
+
+mysql_close($con);
+echo "\n\n";
+
+
+
   
 $thisnewusersid = mysql_query("
 	  SELECT
