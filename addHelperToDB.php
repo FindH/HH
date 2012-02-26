@@ -10,6 +10,7 @@
   
   $helperdesc = mysql_real_escape_string(utf8_decode( $_POST['myHelperDescription'] ));
   $mailen = mysql_real_escape_string($_POST['mail']);
+  $plats = mysql_real_escape_string($_POST['location']);
   $namnet = mysql_real_escape_string(utf8_decode( $_POST['name'] ));
   $bildensNamn = $_FILES["file"]["name"];
   //echo $bildensNamn;
@@ -18,7 +19,8 @@
 $con = mysql_connect("mysql34.kontrollpanelen.se","web36942_stoffe","HKjH23nixEfter17");
 if (!$con)
   {
-  die('Lyckas inte koppla upp mig mot databasen: ' . mysql_error());
+  //die('Lyckas inte koppla upp mig mot databasen: ' . mysql_error());
+  die('Något stämde inte, hör gärna av dig till victoriawagman@gmail.com så löser vi det så snabbt vi kan!');
   }
 
 mysql_select_db("web36942_hittahjalpen", $con);
@@ -48,7 +50,7 @@ if(mysql_num_rows(mysql_query("
 } else{
     $sql="INSERT INTO users (user_name, user_email, user_img_url, user_description, hemma_ort)
     VALUES
-    ('$namnet','$mailen','$bildensNamn','$helperdesc','$_POST[location]')";
+    ('$namnet','$mailen','$bildensNamn','$helperdesc','$plats')";
     
     if (!mysql_query($sql))
       {
@@ -155,21 +157,20 @@ $radaUppTaggarArray = mysql_query("
     //Kolla vad denna nya användare fått för id för att kunna skapa adverts! :)
     $thisnewuserid = mysql_query("SELECT user_id FROM users WHERE user_email = '$mailen' LIMIT 1");
       while ($nyttUserId = mysql_fetch_array($thisnewuserid)){
-              echo $nyttUserId['user_id'];
+              $userId = $nyttUserId['user_id'];
           }
 
 
     
     foreach($tags as $t) { //För varje tagg som följdemed ska en advert skapas för den här användaren!
-        echo $t."<br />";
-        /*$sql="INSERT INTO adverts (user_name, user_email, user_img_url, user_description, hemma_ort)
+        $sql="INSERT INTO adverts (advert_text, user_id, location_id, tag_id)
           VALUES
-          ('$namnet','$mailen','$bildensNamn','$helperdesc','$_POST[location]')";
+          ('$t','$userId','$plats','$t')";
           
           if (!mysql_query($sql))
             {
-            die('Det inte att lägga till dig just nu. Hör gärna av dig till victoriawagman@gmail.com!' . mysql_error());
-            }*/
+            die('Hmm, skapa adverts strular. Hör gärna av dig till victoriawagman@gmail.com!' . mysql_error());
+            }
 
       }
 
