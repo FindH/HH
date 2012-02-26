@@ -62,3 +62,26 @@
             js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=210122505723749";
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+    var _kundo = _kundo || {};
+    _kundo["org"] = "hittahjalpense";
+    _kundo["lang"] = "sv";
+    _kundo["btn-type"] = "1";
+
+    (function() {
+        function async_load(){
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = ('https:' == document.location.protocol ? 'https://static-ssl' : 'http://static') +
+            '.kundo.se/embed.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+        if (window.attachEvent)
+            window.attachEvent('onload', async_load);
+        else
+            window.addEventListener('load', async_load, false);
+    })();
+</script>
