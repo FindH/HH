@@ -42,12 +42,7 @@ if(mysql_num_rows(mysql_query("
       echo $_POST["tagValue"]; 
       
     */
-    
-    
     //och efter att vi har lagt till profilen är det nu läge att ladda upp bilden!
-    
-     
-     
 } else{
     $sql="INSERT INTO users (user_name, user_email, user_img_url, user_description, hemma_ort)
     VALUES
@@ -107,77 +102,81 @@ if(mysql_num_rows(mysql_query("
 
 
 
-         
-// Kolla vilka taggar som redan finns!
-//För varje tagg som inte redan finns - lägg till tagg och hämta ut vilket id den taggen fick!
-$radaUppTaggarArray = mysql_query("
-	  SELECT
-	    tag_value
-	    FROM
-	      tags
-	    ");
+      if($result != ''){ //Om vi ännu inte har fått något felmeddelande, fortsätt då med att kolla taggarna!
+  
 
-//Ladda hem en array med alla taggar som finns sen! */
-  /*foreach($tags as $t) {
-    echo $t;
-  }*/
-
-  //Om jag får träff på en tagg som inte redan finns så måste jag lägga in den taggen!
-  /* och  det kan jag ju faktiskt börja med (här uppe!)
-    och hämta ut id!
-  */
-
-  //vi har en array, och det är $tags! (längre upp i koden)
-  //vi stoppar in den i $arr = $tags;
-  $arr = $tags;
-
-  while ($befTaggar = mysql_fetch_array($radaUppTaggarArray)){ //Kollar upp alla befintliga taggar!
-      $existingTag = $befTaggar['tag_value']; //Denna tagg finns redan med i databasen!
-
-        //print_r($arr);  <-- dessa taggar skickas med från föregående sida!
-
-  /*      echo "<br /><br />";
-        echo $existingTag."<br /><br />";*/
-        //arrayen med alla taggar ska vara = sig själv fast det som skiljer är att vi plockar bort de värden som redan finns med i databasen!
-        
-        $arr = array_diff($arr, array($existingTag));
-        //Kvar här i $arr finns alltså endast de taggar som användaren har skrivit in som inte redan fanns med i databasen!
-      }   
-    
-    //print_r($arr);         //De värden som nu finns i $arr ska ju alltså läggas till i listan med taggar!
-    
-    
-    
-    foreach($arr as $at) { //För varje värde som alltså är kvar i arrayen $arr
-      mysql_query("INSERT INTO tags (tag_value)
-        VALUES
-          ('$at')"); //Lägg till den nya taggen!
-    }
-
-
-
-    //Kolla vad denna nya användare fått för id för att kunna skapa adverts! :)
-    $thisnewuserid = mysql_query("SELECT user_id FROM users WHERE user_email = '$mailen' LIMIT 1");
-      while ($nyttUserId = mysql_fetch_array($thisnewuserid)){
-              $userId = $nyttUserId['user_id'];
-          }
-
-
-    
-    foreach($tags as $t) { //För varje tagg som följdemed ska en advert skapas för den här användaren!
-        $sql="INSERT INTO adverts (advert_text, user_id, location_id, tag_id)
-          VALUES
-          ('$t','$userId','$plats','$t')";
+          // Kolla vilka taggar som redan finns!
+          //För varje tagg som inte redan finns - lägg till tagg och hämta ut vilket id den taggen fick!
+          $radaUppTaggarArray = mysql_query("
+                    SELECT
+                      tag_value
+                      FROM
+                        tags
+                      ");
           
-          if (!mysql_query($sql))
-            {
-            die('Hmm, skapa adverts strular. Hör gärna av dig till victoriawagman@gmail.com!' . mysql_error());
-            }
-
-      }
-    // Skapa adverts för denna user, med alla de taggar som kom med från föregående sida!
-    // for each igenom en array med de taggar som skickades med!
-    //Skapa advert - välj korrekt user id, och lägg även in korrekt user location på dessa adverts! (finns med  från föregående sida i $_POST )
+          //Ladda hem en array med alla taggar som finns sen! */
+            /*foreach($tags as $t) {
+              echo $t;
+            }*/
+          
+            //Om jag får träff på en tagg som inte redan finns så måste jag lägga in den taggen!
+            /* och  det kan jag ju faktiskt börja med (här uppe!)
+              och hämta ut id!
+            */
+          
+            //vi har en array, och det är $tags! (längre upp i koden)
+            //vi stoppar in den i $arr = $tags;
+            $arr = $tags;
+          
+            while ($befTaggar = mysql_fetch_array($radaUppTaggarArray)){ //Kollar upp alla befintliga taggar!
+                $existingTag = $befTaggar['tag_value']; //Denna tagg finns redan med i databasen!
+          
+                  //print_r($arr);  <-- dessa taggar skickas med från föregående sida!
+          
+            /*      echo "<br /><br />";
+                  echo $existingTag."<br /><br />";*/
+                  //arrayen med alla taggar ska vara = sig själv fast det som skiljer är att vi plockar bort de värden som redan finns med i databasen!
+                  
+                  $arr = array_diff($arr, array($existingTag));
+                  //Kvar här i $arr finns alltså endast de taggar som användaren har skrivit in som inte redan fanns med i databasen!
+                }   
+              
+              //print_r($arr);         //De värden som nu finns i $arr ska ju alltså läggas till i listan med taggar!
+              
+              
+              
+              foreach($arr as $at) { //För varje värde som alltså är kvar i arrayen $arr
+                mysql_query("INSERT INTO tags (tag_value)
+                  VALUES
+                    ('$at')"); //Lägg till den nya taggen!
+              }
+          
+          
+          
+              //Kolla vad denna nya användare fått för id för att kunna skapa adverts! :)
+              $thisnewuserid = mysql_query("SELECT user_id FROM users WHERE user_email = '$mailen' LIMIT 1");
+                while ($nyttUserId = mysql_fetch_array($thisnewuserid)){
+                        $userId = $nyttUserId['user_id'];
+                    }
+          
+          
+              
+              foreach($tags as $t) { //För varje tagg som följdemed ska en advert skapas för den här användaren!
+                  $sql="INSERT INTO adverts (advert_text, user_id, location_id, tag_id)
+                    VALUES
+                    ('$t','$userId','$plats','$t')";
+                    
+                    if (!mysql_query($sql))
+                      {
+                      die('Hmm, skapa adverts strular. Hör gärna av dig till victoriawagman@gmail.com!' . mysql_error());
+                      }
+          
+                }
+              // Skapa adverts för denna user, med alla de taggar som kom med från föregående sida!
+              // for each igenom en array med de taggar som skickades med!
+              //Skapa advert - välj korrekt user id, och lägg även in korrekt user location på dessa adverts! (finns med  från föregående sida i $_POST )
+      } //Slut på om/if vi inte fått något felmeddelande.
+            
     mysql_close($con);
     echo "\n\n";
 ?>
