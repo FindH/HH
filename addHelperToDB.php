@@ -1,20 +1,4 @@
 <?php
-  //die(var_dump($_POST));
-  //["tagPicker"]=> string(0) "" ["as_values_067"]=> string(22) "barnvakt,barnpassning," ["tag"]=> string(22) "barnvakt,barnpassning,"
-  
-  $tag = $_POST["tag"];
-  $tag = preg_replace('/\x2c$/','',$tag);
-  $tags = preg_split('/\x2c/',$tag);
-  //Jag måste komma ihåg att lägga in kommentar om hur ovanstående regexp fungerar! 
-  
-  
-  $helperdesc = mysql_real_escape_string(utf8_decode( $_POST['myHelperDescription'] ));
-  $mailen = mysql_real_escape_string($_POST['mail']);
-  $plats = mysql_real_escape_string($_POST['location']);
-  $namnet = mysql_real_escape_string(utf8_decode( $_POST['name'] ));
-  $bildensNamn = $_FILES["file"]["name"];
-  //echo $bildensNamn;
-
 
 $con = mysql_connect("mysql34.kontrollpanelen.se","web36942_stoffe","HKjH23nixEfter17");
 if (!$con)
@@ -26,13 +10,30 @@ if (!$con)
 mysql_select_db("web36942_hittahjalpen", $con);
 
 
+  //die(var_dump($_POST));
+  //["tagPicker"]=> string(0) "" ["as_values_067"]=> string(22) "barnvakt,barnpassning," ["tag"]=> string(22) "barnvakt,barnpassning,"
+  
+  $tag = $_POST["tag"];
+  $tag = preg_replace('/\x2c$/','',$tag);
+  $tags = preg_split('/\x2c/',$tag);
+  //Jag måste komma ihåg att lägga in kommentar om hur ovanstående regexp fungerar! 
+  
+  $helperdesc = mysql_real_escape_string(utf8_decode( $_POST['myHelperDescription'] ));
+  $mailen = mysql_real_escape_string($_POST['mail']);
+  $plats = mysql_real_escape_string($_POST['location']);
+  $namnet = mysql_real_escape_string(utf8_decode( $_POST['name'] ));
+  $bildensNamn = $_FILES["file"]["name"];
+  //echo $bildensNamn;
+
+
+
 if(mysql_num_rows(mysql_query("
 	  SELECT
 	    user_email
 	    FROM
 	      users
 	    WHERE
-	      user_email = $mailen
+	      user_email = '$mailen'
 	    "))){
      $result = "Du finns redan med i databasen! :) ";
   
@@ -225,6 +226,33 @@ $radaUppTaggarArray = mysql_query("
         
       </div><!-- End of #content -->
     </div><!-- End of #container -->
+
+
+<!-- kundo.se knapp! -->
+<script type="text/javascript">
+    var _kundo = _kundo || {};
+    _kundo["org"] = "hittahjalpense";
+    _kundo["lang"] = "sv";
+    _kundo["btn-type"] = "1";
+
+    (function() {
+        function async_load(){
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = ('https:' == document.location.protocol ? 'https://static-ssl' : 'http://static') +
+            '.kundo.se/embed.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+        if (window.attachEvent)
+            window.attachEvent('onload', async_load);
+        else
+            window.addEventListener('load', async_load, false);
+    })();
+</script>
+<!-- slut på kundo.se knapp! -->
+
 
   </body>
   

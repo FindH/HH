@@ -63,6 +63,8 @@
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
 
+
+<!-- Kundo.se -->
 <script type="text/javascript">
     var _kundo = _kundo || {};
     _kundo["org"] = "hittahjalpense";
@@ -85,3 +87,4 @@
             window.addEventListener('load', async_load, false);
     })();
 </script>
+<!-- slut på kundo.se -->
