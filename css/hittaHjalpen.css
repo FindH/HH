@@ -156,7 +156,7 @@ body{
 
 #creepers{
     position: fixed;
-    bottom: 0px;
+    bottom: -10px;
     left: -2px;
     z-index: -10;
     border: 0px solid red;
