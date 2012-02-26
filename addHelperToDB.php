@@ -55,6 +55,7 @@ if(mysql_num_rows(mysql_query("
     if (!mysql_query($sql))
       {
       die('Det inte att lägga till dig just nu. Hör gärna av dig till victoriawagman@gmail.com!' . mysql_error());
+      $result = "Gick tyvärr inte att lägga till dig. Hör gärna av dig till kontakt@hittahjalpen.se!";
       }
     
     /*
@@ -173,22 +174,11 @@ $radaUppTaggarArray = mysql_query("
             }
 
       }
-
-
     // Skapa adverts för denna user, med alla de taggar som kom med från föregående sida!
     // for each igenom en array med de taggar som skickades med!
     //Skapa advert - välj korrekt user id, och lägg även in korrekt user location på dessa adverts! (finns med  från föregående sida i $_POST )
-
-
-
-
-
-mysql_close($con);
-echo "\n\n";
-
-
-
-  
+    mysql_close($con);
+    echo "\n\n";
 ?>
 
 
@@ -202,19 +192,16 @@ echo "\n\n";
   </head>
   
   <body id="addHelperToDB">
-
     <div id="container">
         <div id="content">
 
          <!-- Headern!  -->
         <?php include("header.php"); ?>
 
-
     <p>Hej <?php echo $_POST["name"]; ?>!</p>
     <p><?php echo $result; ?>
     </p>
-    
-    
+
     <?php
     if(!$result){
     	echo "<p>Nu finns du med hos hittahjälpen.se!</p>";
