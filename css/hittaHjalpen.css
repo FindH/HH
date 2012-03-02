@@ -80,7 +80,7 @@ body{
 /* Main divar */
 
 #shareUsContainer{
-	width: 904px;
+	width: 984px;
 	margin: 0 auto;
 	border: 0px solid red;
 	position: relative;
@@ -128,7 +128,7 @@ body{
     position: absolute;
     top: 13px;
     padding-top: 13px;
-    right: -142px;
+    right: -102px;
     width: 198px;
     border: 0px solid red;
 }
@@ -204,33 +204,36 @@ body{
     }
 
 #index #content{
-    padding-top: 44px;
+    padding-top: 24px;
     }
 
 #index h1{
-    margin: 0 auto 40px;
-    font-size: 3em;
-    text-align: center;
+    margin: 0 auto 100px;
+    font-size: 2em;
     border: 0px solid red;
     /*font-family: OpenSansRegular, WorstveldSling;*/
     font-family: 'Kaushan Script';
     color: #444444;
     letter-spacing: -0.01em;
     min-height: 60px;
+    position: relative;
+    z-index: 356;
 }
 
 #pratbubbla{
 	background: url("/images/pratbubbla.png");
 	background-repeat: no-repeat;
-	width: 260px;
-	padding: 34px 70px 20px 20px;
+	width: 440px;
+	padding: 40px 23px 20px 84px;
 	height: 210px;
 	position: absolute;
-	left: -168px;
-	top: 22px;
-	line-height: 1.1em;
+	left: 123px;
+	top: 33px;
+	line-height: 1.06em;
 	font-family: WorstveldSling;
 	font-size: 1.4em;
+	letter-spacing: 0.02em;
+	color: #555555;
 }
 
 
@@ -244,21 +247,27 @@ body{
 #findHelpContainer{
 	float: left;
 	width: 480px;
+	position: relative;
+	z-index: 5;
+	margin-top: 32px;
 }
 
 #findHelpContainer p{
 	max-width: 400px;
+	background: #ffffff;
 }
 
 
 #searchArea{
 	width: 440px;
 	border: 0px solid red;
-	margin: 20px 0 0 20px;
+	margin: 0px 0 0 20px;
 }
 
 #searchArea form{
 	border: 0px solid #FFAD9B;
+	padding: 4px;
+	background: #ffffff;
 }
 
 #searchArea form p{
@@ -267,7 +276,7 @@ body{
 
 
 #searchArea input[type=text]{
-	width: 430px;
+	width: 420px;
 	font-size: 1.2em;
 	margin-bottom: 10px;
 	display: block;

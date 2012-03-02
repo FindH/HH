@@ -16,12 +16,13 @@
 	    <h1>Hittahjälpen.se</h1>
             <!-- Sökningen -->
 	      	      <div id="pratbubbla">
-			  <p><span style="font-size: 1.3em; padding-left: 45px;">Hej</span><span style="font-size: 1.4em;">!</span>
+			<p><span style="font-size: 1.3em; padding-left: 30px;">Hej</span><span style="font-size: 1.4em;">!</span>
 			    <br />Kanske kan jag hitta någon som kan
-			    <br /><b>ta hand om en syssla åt dig?</b></p>
-			  <p style="padding-left: 40px;">//Hittare Hanna</p>
+			    <br />ta hand om en syssla åt dig?
+			    <br />//Hittare Hanna</p>
 		      </div>
-	      <img src="images/hitta-hjalp-med-vardagssysslor.png" alt="Roboten Findus Finnare" style="width: 170px; float: left; margin-right: 4px; margin-left: 60px;" />
+	      <img src="images/hitta-hjalp-med-vardagssysslor.png" alt="Roboten Findus Finnare" style="width: 170px; float: left; margin-right: 4px; margin-left: 60px; position: relative; z-index: 35;" />
+	      			  
 	      <div id="findHelpContainer">
 		<div id="searchArea">
 		    <form action="search">
@@ -31,7 +32,7 @@
 				  <!--<input type="submit" id="findHelpers" value="Hitta hjälpare" />-->
 			      </p>
 			      <p>Vad önskar du att någon annan tar hand om?</p>
-			<input type="text" id="searchBox" name="searchBox" placeholder="barnvakt? trädgårdsskötsel? stryka skjortor?" style="width:100%" />
+			<input type="text" id="searchBox" name="searchBox" placeholder="barnvakt? trädgårdsskötsel? stryka skjortor?" />
 			<button>Hitta hjälpare</button>
 		    </form>
 		</div><!-- End of #searchArea --><!--   //Slut på sökningen -->
