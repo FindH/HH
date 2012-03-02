@@ -87,7 +87,6 @@ body{
 }
 
 #container{
-    width: 880px;
     width: 780px;
     border: 1px solid #bfbfbf;
     border-top: none;
@@ -129,10 +128,8 @@ body{
     position: absolute;
     top: 13px;
     padding-top: 13px;
-    right: -195px;
     right: -142px;
     width: 198px;
-    /* z-index: -10; */
     border: 0px solid red;
 }
 
