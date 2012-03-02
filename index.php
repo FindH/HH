@@ -144,7 +144,6 @@
             <!-- Starting page - Show lead userForward --> <!-- inforutor finns här -->
            <div id="leadUserForward">
 	    <h2>Vad är du bra på?</h2>
-	    <img src="/images/laddad-for-ett-extrajobb.png" style="float: left; width: 84px; margin-left: 4px; margin-right: 14px; margin-bottom: 40px; margin-top: 2px;" />
 	    <!--<img src="/images/laddad-for-ett-extrajobb.png" style="float: left; width: 84px; margin-left: 4px; margin-right: 14px; margin-bottom: 40px; margin-top: 2px;" />-->
 
    
