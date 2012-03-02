@@ -5,7 +5,7 @@
     <title>HittaHjälpen</title>
 	
     <?php include("head_js.php"); ?>
-  
+    <!--<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>  -->
 </head>
   
   <body id="index">
@@ -13,25 +13,34 @@
     <div id="container">
 	  
         <div id="content">
-            
+	    <h1>Hittahjälpen.se</h1>
             <!-- Sökningen -->
-            <h1>Hittahjälpen.se</h1>
-            <div id="searchArea">
-                <form action="search">
-                    <input type="text" id="searchBox" name="searchBox" placeholder="Hjälp mig med.." style="width:100%" />
-                      <p>i
-				<select id="selectLocation" name="selectLocation"></select>
-				<!--<input type="submit" id="findHelpers" value="Hitta hjälpare" />-->
-		      </p>
+	      	      <div id="pratbubbla">
+			  <p><span style="font-size: 1.3em; padding-left: 45px;">Hej</span><span style="font-size: 1.4em;">!</span>
+			    <br />Kanske kan jag hitta någon som kan
+			    <br /><b>ta hand om en syssla åt dig?</b></p>
+			  <p style="padding-left: 40px;">//Hittare Hanna</p>
+		      </div>
+	      <img src="images/hitta-hjalp-med-vardagssysslor.png" alt="Roboten Findus Finnare" style="width: 170px; float: left; margin-right: 4px; margin-left: 60px;" />
+	      <div id="findHelpContainer">
+		<div id="searchArea">
+		    <form action="search">
+			  <p>Var befinner du dig?</p>
+			      <p>
+				  <select id="selectLocation" name="selectLocation"></select>
+				  <!--<input type="submit" id="findHelpers" value="Hitta hjälpare" />-->
+			      </p>
+			      <p>Vad önskar du att någon annan tar hand om?</p>
+			<input type="text" id="searchBox" name="searchBox" placeholder="barnvakt? trädgårdsskötsel? stryka skjortor?" style="width:100%" />
+			<button>Hitta hjälpare</button>
+		    </form>
+		</div><!-- End of #searchArea --><!--   //Slut på sökningen -->
+	      </div>
 
-                </form>
-            </div><!-- End of #searchArea --><!--   //Slut på sökningen -->
-            
             
             
             
             <div id="results">
-	      
 	      <!--
 
 	    <div class="my-new-list">
@@ -130,16 +139,18 @@
 
             </div><!-- End of results -->
 
+
+
             <!-- Starting page - Show lead userForward --> <!-- inforutor finns här -->
            <div id="leadUserForward">
+	    <h2>Vad är du bra på?</h2>
+	    <img src="/images/laddad-for-ett-extrajobb.png" style="float: left; width: 84px; margin-left: 4px; margin-right: 14px; margin-bottom: 40px; margin-top: 2px;" />
 
-
-
-   <h2>Vad är du bra på?</h2>
+   
 
 	      <a href="addHelper.php" class="button blue buttonIndex">Lägg till mig!</a>
 		      <p>Du kanske älskar djur och kan vara <a href="#">husdjursvakt?</a> 
-		      Är du en fena på att <a href="#">klippa gräsmattor?</a> Älskar du höstens färger och att <a href="#">kratta löv?</a>
+		      <br />Är du en fena på att <a href="#">klippa gräsmattor?</a><br />Älskar du höstens färger och att <a href="#">kratta löv?</a><br />
 		      Spritter det i armarna av att <a href="#">klyva ved?</a><br />		    
 		    </p>
 	
@@ -156,22 +167,10 @@
 
 
        <!-- Here is our #shareUs   -->
-       <?php include("shareUs.php"); ?>
+       <?php //include("shareUs.php"); ?>
     </div> <!-- End of shareUsContainer -->
 
 
-<div id="creepers">
-	<a href="http://mediacreeper.com/latest" title="MediaCreeper">
-                <img src="http://mediacreeper.com/image" alt="MediaCreeper" style="width: 80px; height: 15px; border:0px;" />
-                </a>
-                <!-- End MediaCreeper tracker code -->
-                
-                <!-- Begin Creeper tracker code -->
-                <a href="http://gnuheter.com/creeper/senaste" title="Creeper">
-                    <img src="http://gnuheter.com/creeper/image" alt="Creeper" style="width: 80px; height: 15px; border: 0px;" />
-                </a>
-                <!-- End Creeper tracker code -->
-	</div>
 
   </body>
   

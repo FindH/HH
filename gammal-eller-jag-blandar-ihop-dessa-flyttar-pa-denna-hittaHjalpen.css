@@ -162,7 +162,6 @@ body{
 	width: 420px;
 	margin: 0 auto;
 	border: 0px solid red;
-	text-align: right;
 }
 
 #searchArea form{
@@ -182,7 +181,6 @@ body{
 	font-size: 1.04em;
 	border: 1px solid #cccccc;
 	margin: 0px;
-	
 }
 
 

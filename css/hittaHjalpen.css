@@ -34,6 +34,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	font-family: sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -112,6 +113,7 @@ body{
     margin: 0 auto;
     padding-bottom: 10px;
     min-height: 400px;
+    position: relative;
 }
 
 
@@ -203,28 +205,34 @@ body{
     }
 
 #index #content{
-    padding-top: 84px;
+    padding-top: 44px;
     }
 
 #index h1{
-    margin: 0 auto;
-    margin-top: 0px;
-    margin-bottom: -10px;
-    font-size: 3.1em;
+    margin: 0 auto 40px;
+    font-size: 3em;
     text-align: center;
     border: 0px solid red;
-    font-weight: bold;
-    font-family: OpenSansRegular, WorstveldSling;
-    color: #cfcfcf;
-    text-shadow:
-    1px 2px 0 #555,
-    -1px -1px 0 #aaa,
-    1px -1px 0 #666,
-    -1px 1px 0 #555,
-    1px 1px 0 #111;
+    /*font-family: OpenSansRegular, WorstveldSling;*/
+    font-family: 'Kaushan Script';
+    color: #444444;
     letter-spacing: -0.01em;
-    clear: both;
-	}
+    min-height: 60px;
+}
+
+#pratbubbla{
+	background: url("/images/pratbubbla.png");
+	background-repeat: no-repeat;
+	width: 260px;
+	padding: 34px 70px 20px 20px;
+	height: 210px;
+	position: absolute;
+	left: -168px;
+	top: 22px;
+	line-height: 1.1em;
+	font-family: WorstveldSling;
+	font-size: 1.4em;
+}
 
 
 #index h2{
@@ -234,39 +242,51 @@ body{
 	margin-bottom: 6px;
 }
 
+#findHelpContainer{
+	float: left;
+	width: 480px;
+}
+
+#findHelpContainer p{
+	max-width: 400px;
+}
+
 
 #searchArea{
 	width: 440px;
-	margin: 0 auto;
 	border: 0px solid red;
-	text-align: right;
+	margin: 20px 0 0 20px;
 }
 
 #searchArea form{
-	margin: 13px 0px 50px 0;
 	border: 0px solid #FFAD9B;
 }
+
+#searchArea form p{
+	font-weight: 700;
+}
+
 
 #searchArea input[type=text]{
 	width: 430px;
 	font-size: 1.2em;
 	margin-bottom: 10px;
 	display: block;
-	float: right;
 	padding-left: 2px;
 }
 
 #searchArea select{
 	font-size: 1.04em;
 	border: 1px solid #cccccc;
-	margin: 0px;
-	
+	margin: 0 0 20px 0;
 }
 
 
 /* Sökresultaten */
 #results{
 	border: 0px solid #837562;
+	clear: both;
+	min-height: 40px;
 	
 }
 
