@@ -81,7 +81,7 @@
       <!-- Here is our #footer :)  -->
        <?php //include("footer.php"); ?>
        <!-- Johan, du tycker inte footern ska vara med på den här sidan eller bara commentat ut för att kunna ladda snabbare när du kollar? -->
-       
+       <!-- Minns inte, tror den var knas :) -->
 
     
     </div><!-- End of #container -->
