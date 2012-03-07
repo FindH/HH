@@ -14,9 +14,10 @@ $(function () {
             //var test = $(this).val();
             //var test2 = $(this).val().length;
             var search = $(this).val();
-            var location = $("#selectLocation option:selected").text();
+            var city = $('#selectLocation option:selected').text();
+            var url = '/api.php/getadvertslatest/' + search + '/' + city;
 
-            $.getJSON('/api.php/getadvertslatest/' + search + '/' + location, function (data) {
+            $.getJSON(url, function (data) {
                 var items = [];
                 if (data.list.length > 0) {
                     $.each(data.list, function (key, val) {
@@ -49,9 +50,9 @@ $(function () {
         };
 
         switch (e.keyCode) {
-            //            case 8:  // Backspace            
-            //                //console.log('backspace');            
-            //            case 9:  // Tab            
+            //            case 8:  // Backspace                
+            //                //console.log('backspace');                
+            //            case 9:  // Tab                
             case 13: // Enter
                 return false;
                 //            case 37: // Left
@@ -77,6 +78,7 @@ $(function () {
             emptyText: "Tryck enter för att spara"
         }
         );
+
     });
 
     $('#findHelpers').click(function () {
@@ -113,6 +115,8 @@ $(function () {
     //        // Skicka dessa värden till nästa sida eller något
     //    });
 
+    SetDefaultLocation();
+    FindLocation();
 
     function SetLocation(lat, long) {
         $.getJSON('/api.php/getcities/' + lat + '/' + long, function (data) {
@@ -129,8 +133,15 @@ $(function () {
                 }
             });
 
+            $('#selectLocation')
+                .find('option')
+                .remove()
+                .end()
+            //                .append('<option value="whatever">text</option>')
+            //                .val('whatever')
+            ;
             $(items.join()).appendTo('#selectLocation');
-            $(items.join()).appendTo('#selectLocationForm');
+            //$(items.join()).appendTo('#selectLocationForm');
         });
     }
 
@@ -150,38 +161,39 @@ $(function () {
             });
 
             $(items.join()).appendTo('#selectLocation');
-            $(items.join()).appendTo('#selectLocationForm');
+            //$(items.join()).appendTo('#selectLocationForm');
         });
     }
 
-    if (navigator.geolocation) {
+    function FindLocation() {
 
-        navigator.geolocation.getCurrentPosition(function (position) {
-            SetLocation(position.coords.latitude, position.coords.longitude);
-        },
-        // next function is the error callback
-		function (error) {
-		    switch (error.code) {
-		        case error.TIMEOUT:
-		            //alert ('Timeout');
-		            SetDefaultLocation();
-		            break;
-		        case error.POSITION_UNAVAILABLE:
-		            //					alert ('Position unavailable');
-		            SetDefaultLocation();
-		            break;
-		        case error.PERMISSION_DENIED:
-		            //					alert ('Permission denied');
-		            SetDefaultLocation();
-		            break;
-		        case error.UNKNOWN_ERROR:
-		            //					alert ('Unknown error');
-		            SetDefaultLocation();
-		            break;
-		    }
-		});
-    } else {
-        SetDefaultLocation();
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition(function (position) {
+                SetLocation(position.coords.latitude, position.coords.longitude);
+            },
+            // next function is the error callback
+		    function (error) {
+		        switch (error.code) {
+		            case error.TIMEOUT:
+		                //alert ('Timeout');
+		                SetDefaultLocation();
+		                break;
+		            case error.POSITION_UNAVAILABLE:
+		                //					alert ('Position unavailable');
+		                SetDefaultLocation();
+		                break;
+		            case error.PERMISSION_DENIED:
+		                //					alert ('Permission denied');
+		                SetDefaultLocation();
+		                break;
+		            case error.UNKNOWN_ERROR:
+		                //					alert ('Unknown error');
+		                SetDefaultLocation();
+		                break;
+		        }
+		    });
+        }
     }
 
 });
